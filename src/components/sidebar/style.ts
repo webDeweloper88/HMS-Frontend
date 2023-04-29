@@ -1,22 +1,12 @@
-import { makeStyles } from '@mui/styles'
+import { makeStyles } from "@mui/styles";
 import { Theme } from "@mui/material";
-import { tokens } from '../../theme'
+import { tokens } from "../../theme";
 
 export const useStyles = makeStyles((theme: Theme) => {
 	const colors = tokens(theme.palette.mode)
+
 	return (
 		{
-			root: {
-				display: 'flex',
-				width: '100%'
-			},
-			mainSection: {
-				display: 'flex',
-				width: "90%",
-				flexDirection: 'column',
-				justifyContent: 'center'
-			},
-
 			navBlock: {
 				width: '100%',
 				borderBottom: `1px solid ${colors.borderColor}`
@@ -31,22 +21,19 @@ export const useStyles = makeStyles((theme: Theme) => {
 			brandTitle: {
 				color: `${theme.palette.mode === 'dark' ? colors.white.DEFAULT : colors.black.DEFAULT}`
 			},
-			test: {
-				marginBottom: '58px',
-
+			navList: {
+				marginBottom: '55px'
 			},
 			navItem: {
-				color: 'red',
 				'&:hover': {
 					backgroundColor: '#1900D5 !important',
-					color: "#FFF",
+					color: '#fff',
 					borderRadius: '4px',
 					'& .MuiSvgIcon-root': {
-						color: `${colors.white.DEFAULT} !important`,
+						color: `${colors.white.DEFAULT} !important`
 					}
-				}
-			},
-
+				},
+			}
 		}
 	)
 })

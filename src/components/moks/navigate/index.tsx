@@ -27,7 +27,7 @@ export const navMenu = [
 	{
 		name: 'Sozlash',
 		icon: <SettingsOutlined />,
-		path: '/setings',
+		path: '/settings',
 		id: 4
 	},
 ]

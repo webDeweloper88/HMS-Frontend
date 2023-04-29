@@ -114,12 +114,12 @@ export const themeSettings: any = (mode: string) => {
 			h1: {
 				fontFamily: ['Roboto', 'sans-serif'].join(','),
 				fontSize: 40,
-				fontWeight: 700,
+				fontWeight: 600,
 			},
 			h2: {
 				fontFamily: ['Roboto', 'sans-serif'].join(','),
 				fontSize: 35,
-				fontWeight: 700,
+				fontWeight: 600,
 			},
 			h3: {
 				fontFamily: ['Roboto', 'sans-serif'].join(','),
