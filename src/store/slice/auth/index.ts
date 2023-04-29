@@ -20,7 +20,7 @@ const initialState: IAuthState = {
 			}
 		]
 	},
-	isLogged: true
+	isLogged: false
 }
 
 
@@ -29,7 +29,8 @@ export const authSlice = createSlice({
 	initialState,
 	reducers: {
 		login(state, action) {
-
+			state.user = action.payload
+			state.isLogged = true
 		}
 	}
 })
