@@ -1,9 +1,9 @@
 import React from 'react'
 
-const SettingsComponent = () => {
+const SettingComponent = () => {
 	return (
-		<div>SettingsComponent</div>
+		<div>SettingComponent</div>
 	)
 }
 
-export default SettingsComponent
+export default SettingComponent

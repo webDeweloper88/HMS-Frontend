@@ -9,7 +9,8 @@ import { CssBaseline, ThemeProvider } from '@mui/material'
 import LayoutComponent from './components/layout'
 import WatchListComponent from './components/pages/watchlist'
 import NewsComponent from './components/pages/news'
-import SettingsComponent from './components/pages/settings'
+import SettingComponent from './components/pages/settings'
+
 
 
 const App = () => {
@@ -18,20 +19,23 @@ const App = () => {
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
-        <LayoutComponent>
-          <div className='App'>
-            <Routes>
+
+        <div className='App'>
+          <Routes>
+            <Route element={<LayoutComponent />}>
               <Route element={<PrivateRoute />}>
                 <Route path='/' element={<Home />} />
                 <Route path='/watchlist' element={<WatchListComponent />} />
                 <Route path='/news' element={<NewsComponent />} />
-                <Route path='/settings' element={<SettingsComponent />} />
+                <Route path='/settings' element={<SettingComponent />} />
+
               </Route>
               <Route path='/login' element={<AuthRootComponent />} />
               <Route path='/register' element={<AuthRootComponent />} />
-            </Routes>
-          </div >
-        </LayoutComponent>
+            </Route>
+          </Routes>
+        </div >
+
       </ThemeProvider>
     </ColorModeContext.Provider>
   )

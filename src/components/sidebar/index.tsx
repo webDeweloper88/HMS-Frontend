@@ -81,7 +81,7 @@ const SidebarComponet = (props: any) => {
 								)}
 							</FlexBetween>
 						</Box>
-						<List className={classes.test}
+						<List
 							sx={{ marginBottom: '55px' }}
 						>
 							{renderNavMenu}
@@ -90,7 +90,7 @@ const SidebarComponet = (props: any) => {
 					<Box width='100%' >
 						<List >
 							<ListItem  >
-								<ListItemButton className={classes.navItem} sx={{ padding: 0 }}>
+								<ListItemButton className={classes.navItem} >
 									<ListItemIcon>
 										<LoginOutlined />
 									</ListItemIcon>
