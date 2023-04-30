@@ -8,6 +8,7 @@ import { instance } from '../../utils/axios'
 import { useAppDispatch } from '../../utils/hook'
 import { login } from '../../store/slice/auth'
 import { AppErrors } from '../../common/errors'
+import { useForm } from 'react-hook-form'
 
 
 const AuthRootComponent: React.FC = (): JSX.Element => {
@@ -19,17 +20,24 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
   const [username, setUsername] = useState('')
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const {
+    register,
+    formState: {
+      errors
+    },
+    handleSubmit
+  } = useForm()
+
+  console.log('Xatolik ', errors)
 
 
-
-
-  const handleSubmit = async (e: { preventDefault: () => void }) => {
-    e.preventDefault()
+  const handleSubmitForm = async (data: any) => {
+    console.log(data)
     if (location.pathname === '/login') {
       try {
         const userData = {
-          email,
-          password
+          email: data.email,
+          password: data.password
         }
         const user = await instance.post('auth/login', userData)
         await dispatch(login(user.data))
@@ -62,7 +70,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
 
   return (
     <div className="root">
-      <form onSubmit={handleSubmit} className="form">
+      <form onSubmit={handleSubmit(handleSubmitForm)} className="form">
         <Box
           display='flex'
           justifyContent='center'
@@ -75,7 +83,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
           boxShadow={'5px 5px 10px #ccc'}
         >
           {location.pathname === '/login' ?
-            <LoginPage setEmail={setEmail} setPassword={setPassword} navigate={navigate} /> : location.pathname === '/register' ?
+            <LoginPage navigate={navigate} register={register} errors={errors} /> : location.pathname === '/register' ?
               <RegisterPage navigate={navigate} setFirstName={setFirstName} setUsername={setUsername} setEmail={setEmail} setPassword={setPassword} setRepeatPassword={setRepeatPassword} /> : null}
         </Box>
       </form>
