@@ -1,16 +1,18 @@
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import React from 'react'
 
-import { IpropsLogin } from '../../../common/types/auth';
+import { IpropsLogin } from '../../../../common/types/auth';
+import { useStyles } from './styles';
+import AppButton from '../../../app-button';
 
 
 const LoginPage: React.FC<IpropsLogin> = (props: IpropsLogin): JSX.Element => {
 	const { navigate, register, errors } = props
+	const classes = useStyles()
 	return (
 		<>
-			<Typography variant="h2" component="h3">
+			<Typography variant="h2" component="h3" fontSize={32}>
 				Kirish
 			</Typography>
 			<Typography variant="body2" >
@@ -39,9 +41,9 @@ const LoginPage: React.FC<IpropsLogin> = (props: IpropsLogin): JSX.Element => {
 					minLength: 6
 				})}
 			/>
-			<Button type='submit' sx={{ width: '80%', marginTop: 2, marginBottom: 1 }} variant="contained">kirish</Button>
+			<AppButton type='submit' sx={{ width: '80%', marginTop: 2, marginBottom: 1 }} variant="contained">kirish</AppButton>
 			<Typography variant="body2" >
-				Ro`yhatdan o`tmaganmisiz?<span className='test' onClick={() => navigate('/register')}>Ro`yhatdan o`tish</span>
+				Ro`yhatdan o`tmaganmisiz?<span className={classes.incitingText} onClick={() => navigate('/register')}>Ro`yhatdan o`tish</span>
 			</Typography>
 		</>
 	)
