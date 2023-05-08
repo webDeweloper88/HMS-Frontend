@@ -19,7 +19,7 @@ const TopBarComponent = (props: any) => {
 
 
 	return (
-		<AppBar className={classes.root}  >
+		<AppBar className={classes.root} position='static' >
 			<Toolbar className={classes.toolBar}>
 				<FlexBetween>
 					<MenuOutlined className={classes.menuIcon} onClick={() => setIsOpen(!isOpen)}></MenuOutlined>
