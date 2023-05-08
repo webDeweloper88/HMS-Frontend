@@ -74,11 +74,11 @@ const SidebarComponet = (props: any) => {
 										Demo
 									</Typography>
 								</Box>
-								{isNonmobile && (
+								{/*{isNonmobile && (
 									<IconButton onClick={() => setIsOpen(!isOpen)}>
 										<ChevronLeftOutlined />
 									</IconButton>
-								)}
+								)}*/}
 							</FlexBetween>
 						</Box>
 						<List

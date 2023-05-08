@@ -9,15 +9,12 @@ import { useAppDispatch } from '../../utils/hook'
 import { login } from '../../store/slice/auth'
 import { AppErrors } from '../../common/errors'
 import { useForm } from 'react-hook-form'
+import { yupResolver } from '@hookform/resolvers/yup';
+import { LoginSchema, RegisterSchema } from '../../utils/yup'
 
 
 const AuthRootComponent: React.FC = (): JSX.Element => {
   const location = useLocation()
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [repeatPassword, setRepeatPassword] = useState('')
-  const [firstName, setFirstName] = useState('')
-  const [username, setUsername] = useState('')
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
   const {
@@ -26,13 +23,14 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
       errors
     },
     handleSubmit
-  } = useForm()
+  } = useForm({
+    resolver: yupResolver(location.pathname === '/login' ? LoginSchema : RegisterSchema)
+  })
 
-  console.log('Xatolik ', errors)
 
 
   const handleSubmitForm = async (data: any) => {
-    console.log(data)
+
     if (location.pathname === '/login') {
       try {
         const userData = {
@@ -47,13 +45,13 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
       }
 
     } else {
-      if (password === repeatPassword) {
+      if (data.password === data.confirmPassword) {
         try {
           const userData = {
-            firstName,
-            userName: username,
-            email,
-            password
+            firstName: data.name,
+            userName: data.username,
+            email: data.email,
+            password: data.password
           }
           const newUser = await instance.post('auth/register', userData)
           await dispatch(login(newUser.data))
@@ -63,7 +61,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
           return e
         }
       } else {
-        throw new Error(AppErrors.passwordDoNotMatch)
+        throw new Error(AppErrors.PasswordDoNotMatch)
       }
     }
   }
@@ -84,7 +82,11 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
         >
           {location.pathname === '/login' ?
             <LoginPage navigate={navigate} register={register} errors={errors} /> : location.pathname === '/register' ?
-              <RegisterPage navigate={navigate} setFirstName={setFirstName} setUsername={setUsername} setEmail={setEmail} setPassword={setPassword} setRepeatPassword={setRepeatPassword} /> : null}
+              <RegisterPage
+                navigate={navigate}
+                register={register}
+                errors={errors}
+              /> : null}
         </Box>
       </form>
     </div>
