@@ -3,20 +3,21 @@ import React, { useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import LoginPage from './login'
 import RegisterPage from './register'
-import './style.scss'
-import { instance } from '../../utils/axios'
-import { useAppDispatch } from '../../utils/hook'
-import { login } from '../../store/slice/auth'
-import { AppErrors } from '../../common/errors'
+import { instance } from '../../../utils/axios'
+import { useAppDispatch } from '../../../utils/hook'
+import { login } from '../../../store/slice/auth'
+import { AppErrors } from '../../../common/errors'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup';
-import { LoginSchema, RegisterSchema } from '../../utils/yup'
+import { LoginSchema, RegisterSchema } from '../../../utils/yup'
+import { useStyles } from './styles'
 
 
 const AuthRootComponent: React.FC = (): JSX.Element => {
   const location = useLocation()
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
+  const classes = useStyles()
   const {
     register,
     formState: {
@@ -67,8 +68,8 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
   }
 
   return (
-    <div className="root">
-      <form onSubmit={handleSubmit(handleSubmitForm)} className="form">
+    <div className={classes.root}>
+      <form onSubmit={handleSubmit(handleSubmitForm)} className={classes.form}>
         <Box
           display='flex'
           justifyContent='center'
@@ -78,7 +79,7 @@ const AuthRootComponent: React.FC = (): JSX.Element => {
           margin='auto'
           padding={5}
           borderRadius={5}
-          boxShadow={'5px 5px 10px #ccc'}
+          boxShadow={'-3px -2px 20px 1px #202020'}
         >
           {location.pathname === '/login' ?
             <LoginPage navigate={navigate} register={register} errors={errors} /> : location.pathname === '/register' ?

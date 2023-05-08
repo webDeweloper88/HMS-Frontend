@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { FC, useEffect, useState } from 'react'
 import { useStyles } from './style'
 import { Box, Drawer, Divider, IconButton, List, ListItem, ListItemButton, ListItemIcon, ListItemText, Typography, useTheme, colors } from '@mui/material'
 import {
-	ChevronLeftOutlined,
-	ChevronRightOutlined,
 	LoginOutlined,
 	LogoutOutlined
 } from '@mui/icons-material';
@@ -12,10 +10,11 @@ import FlexBetween from '../flex-between';
 import { navMenu } from '../moks/navigate';
 import { tokens } from '../../theme';
 import Logo from '../../assets/images/sidebar/logo.svg'
+import { ISidebarProps } from "../../common/types/sidebar";
 
-const SidebarComponet = (props: any) => {
-	const [activ, setActiv] = useState('')
-	const { isNonmobile, drawerWidth, isOpen, setIsOpen } = props
+const SidebarComponent: FC<ISidebarProps> = (props: ISidebarProps): JSX.Element => {
+	const [active, setActive] = useState('')
+	const { isNonMobile, drawerWidth, isOpen, setIsOpen } = props
 	const { pathname } = useLocation()
 	const classes = useStyles()
 	const navigate = useNavigate()
@@ -23,13 +22,15 @@ const SidebarComponet = (props: any) => {
 	const colors = tokens(theme.palette.mode)
 
 	useEffect(() => {
-		setActiv(pathname.substring(1))
+		setActive(pathname)
 	}, [pathname])
 
 	const renderNavMenu = navMenu.map((element): JSX.Element => {
 		return (
 			<ListItem key={element.id} >
-				<ListItemButton onClick={() => navigate(`${element.path}`)} className={classes.navItem}>
+				<ListItemButton onClick={() => navigate(`${element.path}`)}
+					className={active === element.path ? `${classes.navItem} ${classes.active}` : classes.navItem}
+				>
 					<ListItemIcon  >
 						{element.icon}
 					</ListItemIcon>
@@ -107,4 +108,4 @@ const SidebarComponet = (props: any) => {
 	)
 }
 
-export default SidebarComponet
+export default SidebarComponent

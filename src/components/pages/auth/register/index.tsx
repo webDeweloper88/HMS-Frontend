@@ -1,11 +1,13 @@
 import React from 'react'
-import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
-import { IpropsRegister } from '../../../common/types/auth';
+import { IpropsRegister } from '../../../../common/types/auth';
+import AppButton from '../../../app-button';
+import { useStyles } from './styles';
 
 const RegisterPage: React.FC<IpropsRegister> = (props: IpropsRegister): JSX.Element => {
 	const { navigate, register, errors } = props
+	const classes = useStyles()
 	return (
 		<>
 			<Typography variant="h3" component="h4" sx={{ textAlign: 'center' }}>
@@ -74,9 +76,9 @@ const RegisterPage: React.FC<IpropsRegister> = (props: IpropsRegister): JSX.Elem
 				{...register('confirmPassword')}
 			/>
 
-			<Button type='submit' sx={{ width: '80%', marginTop: 2, marginBottom: 1 }} variant="contained" >Ro`yxatdan o`tish</Button>
+			<AppButton type='submit' sx={{ width: '80%', marginTop: 2, marginBottom: 1 }} variant="contained" >Ro`yxatdan o`tish</AppButton>
 			<Typography variant="body2" >
-				Ro`yhatdan o`tganmisiz?<span className='test' onClick={() => navigate('/login')}>Kirish</span>
+				Ro`yhatdan o`tganmisiz?<span className={classes.incitingText} onClick={() => navigate('/login')}>Kirish</span>
 			</Typography>
 		</>
 	)
