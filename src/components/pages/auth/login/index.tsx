@@ -4,11 +4,12 @@ import React from 'react'
 
 import { IpropsLogin } from '../../../../common/types/auth';
 import { useStyles } from './styles';
-import AppButton from '../../../app-button';
+
+import AppLoadingButton from '../../../loading-button';
 
 
 const LoginPage: React.FC<IpropsLogin> = (props: IpropsLogin): JSX.Element => {
-	const { navigate, register, errors } = props
+	const { navigate, register, errors, loading } = props
 	const classes = useStyles()
 	return (
 		<>
@@ -41,7 +42,7 @@ const LoginPage: React.FC<IpropsLogin> = (props: IpropsLogin): JSX.Element => {
 					minLength: 6
 				})}
 			/>
-			<AppButton type='submit' sx={{ width: '80%', marginTop: 2, marginBottom: 1 }} variant="contained">kirish</AppButton>
+			<AppLoadingButton type='submit' loading={loading} sx={{ width: '80%', marginTop: 2, marginBottom: 1 }} variant="contained">kirish</AppLoadingButton>
 			<Typography variant="body2" >
 				Ro`yhatdan o`tmaganmisiz?<span className={classes.incitingText} onClick={() => navigate('/register')}>Ro`yhatdan o`tish</span>
 			</Typography>

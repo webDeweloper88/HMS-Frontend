@@ -24,7 +24,7 @@ const TopBarComponent: FC<ITopBarProps> = (props: ITopBarProps): JSX.Element => 
 			<Toolbar className={classes.toolBar}>
 				<FlexBetween>
 					<MenuOutlined className={classes.menuIcon} onClick={() => setIsOpen(!isOpen)}></MenuOutlined>
-					<Typography variant='h3'>Welcome Maxmudjon</Typography>
+					<Typography variant='h3'>Xush kelibsiz {sessionStorage.getItem('name')}</Typography>
 				</FlexBetween>
 				<Box display='flex' alignItems='center'>
 					{/*user actions */}
