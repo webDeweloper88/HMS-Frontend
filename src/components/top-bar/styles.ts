@@ -10,7 +10,10 @@ export const useStyles = makeStyles((theme: Theme) => {
 				position: 'static',
 				background: `${colors.primary.DEFAULT} !important`,
 				borderBottom: `1px solid ${colors.borderColor}`,
-				boxShadow: 'none !important'
+				boxShadow: '2px -5px 10px #6d7275',
+				transform: 'translateZ(0)',
+
+
 			},
 			toolBar: {
 				justifyContent: 'space-between',

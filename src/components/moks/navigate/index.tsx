@@ -3,6 +3,10 @@ import {
 	AutoGraphOutlined,
 	MenuBookOutlined,
 	SettingsOutlined,
+	GroupsOutlined,
+	GroupAddOutlined,
+	DomainOutlined,
+	SupervisorAccountOutlined
 } from '@mui/icons-material';
 
 export const navMenu = [
@@ -19,15 +23,27 @@ export const navMenu = [
 		id: 2
 	},
 	{
-		name: 'Yangiliklar',
-		icon: <MenuBookOutlined />,
-		path: '/news',
+		name: 'Doctor',
+		icon: <SupervisorAccountOutlined />,
+		path: '/doctor',
 		id: 3
+	},
+	{
+		name: 'Bemor',
+		icon: <GroupAddOutlined />,
+		path: '/bemor',
+		id: 4
+	},
+	{
+		name: 'Bo`lim',
+		icon: <DomainOutlined />,
+		path: '/bulim',
+		id: 5
 	},
 	{
 		name: 'Sozlash',
 		icon: <SettingsOutlined />,
 		path: '/settings',
-		id: 4
+		id: 6
 	},
 ]
