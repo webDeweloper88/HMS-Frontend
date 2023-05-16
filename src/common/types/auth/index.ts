@@ -74,3 +74,36 @@ export interface IRegisterData {
 	firstName: string
 	username: string
 }
+
+export interface bemorList {
+
+	bemor_id: string,
+	FIO: string,
+	jinsi: string,
+	tugilgan_sana: string,
+	buyi: string,
+	vazni: string,
+	tana_xarorati: string,
+	manzili: string,
+	ish_joyi: string,
+	qayerdan_yuborilgan: string,
+	yuborilgan_tashxis: string,
+	qabulxona_tashxisi: string,
+	shoshilinch_keltirilgan: string,
+	qanday_transportda: string,
+	createdAt: string,
+	updatedAt: string
+}
+
+
+export interface IpropsBemorRegister<
+	TFieldValues extends FieldValues = FieldValues,
+	TContext = any,
+
+> {
+
+	register: UseFormRegister<TFieldValues>;
+	errors: FieldErrors<TFieldValues>;
+
+
+}

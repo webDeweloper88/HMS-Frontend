@@ -8,8 +8,10 @@ import { ColorModeContext, useMode } from './theme'
 import { CssBaseline, ThemeProvider } from '@mui/material'
 import LayoutComponent from './components/layout'
 import WatchListComponent from './components/pages/watchlist'
-import NewsComponent from './components/pages/news'
 import SettingComponent from './components/pages/settings'
+import BemorPage from './components/pages/bemor'
+import DoctorPage from './components/pages/doctor'
+import BulimPage from './components/pages/Bulim'
 
 
 
@@ -26,9 +28,10 @@ const App = () => {
               <Route element={<PrivateRoute />}>
                 <Route path='/' element={<Home />} />
                 <Route path='/watchlist' element={<WatchListComponent />} />
-                <Route path='/news' element={<NewsComponent />} />
+                <Route path='/bulim' element={<BulimPage />} />
+                <Route path='/doctor' element={<DoctorPage />} />
+                <Route path='/bemor' element={<BemorPage />} />
                 <Route path='/settings' element={<SettingComponent />} />
-
               </Route>
               <Route path='/login' element={<AuthRootComponent />} />
               <Route path='/register' element={<AuthRootComponent />} />
