@@ -11,6 +11,7 @@ const DoctorTable = (props: any) => {
     const { setOpenPopup, openPopup } = props;
     const classes = useStyles();
     const doctorData = useAppSelector(state => state.doctor.doctors);
+    console.log(doctorData)
 
     const handlePrint = () => {
         window.print();

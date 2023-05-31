@@ -32,18 +32,13 @@ export const BulimPage = () => {
         try {
             const newBulim: any = {
 
-                bulimNomi: data.bulimNomi,
+                bolim_nomi: data.bolim_nomi,
                 hudud: data.hudud,
                 muassasa: data.muassasa,
-                telefon: data.telefon,
-                bulimBoshligi: data.bulimBoshligi,
-                doctors: [
-                    {
-                        fio: data.fio,
-                        mutaxassislik: data.mutaxassislik,
-                        departmentId: parseInt(data.departmentId),
-                    },
-                ],
+                telefon_raqam: data.telefon_raqam,
+                bolim_boshligi: data.bolim_boshligi,
+                shifokorlar_soni: data.shifokorlar_soni,
+
             };
             await dispatch(registerBulim(newBulim));
             window.location.reload(); // обновить страницу

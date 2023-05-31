@@ -1,12 +1,16 @@
 import {
 	HomeOutlined,
 	AutoGraphOutlined,
-	MenuBookOutlined,
+	ScatterPlotOutlined,
 	SettingsOutlined,
-	GroupsOutlined,
+	ScienceOutlined,
 	GroupAddOutlined,
 	DomainOutlined,
-	SupervisorAccountOutlined
+	SupervisorAccountOutlined,
+	NewspaperOutlined,
+	ThermostatAutoOutlined,
+	BloodtypeOutlined,
+	FormatIndentIncreaseOutlined,
 } from '@mui/icons-material';
 
 export const navMenu = [
@@ -17,9 +21,9 @@ export const navMenu = [
 		id: 1
 	},
 	{
-		name: 'Watchlist',
-		icon: <AutoGraphOutlined />,
-		path: '/watchlist',
+		name: 'Indeks',
+		icon: <FormatIndentIncreaseOutlined />,
+		path: '/indeks',
 		id: 2
 	},
 	{
@@ -41,9 +45,39 @@ export const navMenu = [
 		id: 5
 	},
 	{
+		name: 'Labaratory',
+		icon: <ScienceOutlined />,
+		path: '/labaratory',
+		id: 6
+	},
+	{
+		name: 'Glyukoza',
+		icon: <ScatterPlotOutlined />,
+		path: '/glyukoza',
+		id: 7
+	},
+	{
+		name: 'Bioximik',
+		icon: <ThermostatAutoOutlined />,
+		path: '/bioximik',
+		id: 8
+	},
+	{
+		name: 'Analiz',
+		icon: <NewspaperOutlined />,
+		path: '/analiz',
+		id: 9
+	},
+	{
+		name: 'Qon',
+		icon: <BloodtypeOutlined />,
+		path: '/qon',
+		id: 10
+	},
+	{
 		name: 'Sozlash',
 		icon: <SettingsOutlined />,
 		path: '/settings',
-		id: 6
+		id: 11
 	},
 ]

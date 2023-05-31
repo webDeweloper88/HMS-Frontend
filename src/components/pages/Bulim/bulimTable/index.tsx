@@ -24,7 +24,7 @@ const BulimTable = (props: any) => {
         setSearchValue(event.target.value);
     };
     const filteredBemorData = departmentData.filter((bulim: any) =>
-        bulim.bulimNomi.toLowerCase().includes(searchValue.toLowerCase())
+        bulim.bolim_nomi.toLowerCase().includes(searchValue.toLowerCase())
     );
     return (
         <>
@@ -57,11 +57,12 @@ const BulimTable = (props: any) => {
                     <TableHead>
                         <TableRow>
                             <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>Id</TableCell>
-                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>bulimNomi</TableCell>
-                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>hudud</TableCell>
-                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>muassasa</TableCell>
-                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>telefon</TableCell>
-                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>bulimBoshligi</TableCell>
+                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>Bo`limning nome</TableCell>
+                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>Xudud</TableCell>
+                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>MUassasa</TableCell>
+                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>Telefon Raqami</TableCell>
+                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>Bo`lim boshlig`i</TableCell>
+                            <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>Shifokorlar soni </TableCell>
                             <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>Taxrirlash</TableCell>
                         </TableRow>
                     </TableHead>
@@ -69,11 +70,12 @@ const BulimTable = (props: any) => {
                         {filteredBemorData.map((bulim: any) => (
                             <TableRow key={bulim.id}>
                                 <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.id}</TableCell>
-                                <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.bulimNomi}</TableCell>
+                                <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.bolim_nomi}</TableCell>
                                 <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.hudud}</TableCell>
                                 <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.muassasa}</TableCell>
-                                <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.telefon}</TableCell>
-                                <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.bulimBoshligi}</TableCell>
+                                <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.telefon_raqam}</TableCell>
+                                <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.bolim_boshligi}</TableCell>
+                                <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>{bulim.shifokorlar_soni}</TableCell>
                                 <TableCell align='center' sx={{ border: "1px solid #3c3c3c" }}>
                                     <IconButton >
                                         <EditIcon />

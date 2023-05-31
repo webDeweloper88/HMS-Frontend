@@ -16,7 +16,7 @@ const DoctorForm: React.FC<IpropsBemorRegister> = (props: IpropsBemorRegister): 
                 <Grid item xs={12}>
                     <TextField
                         variant='outlined'
-                        label='bulimNomi'
+                        label='FIO'
                         color='success'
                         error={!!errors.fio}
                         helperText={errors.fio ? `${errors.fio.message}` : ''}

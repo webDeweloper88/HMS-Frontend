@@ -28,3 +28,10 @@ export const doctorCreate = axios.create({
   timeout: 1000,
   headers: { 'X-Custom-Header': 'foobar' }
 });
+
+export const IndeksAll = axios.create({
+  baseURL: 'http://localhost:3000/indeks',
+  timeout: 1000,
+  headers: { 'X-Custom-Header': 'foobar' }
+});
+

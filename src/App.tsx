@@ -12,6 +12,12 @@ import SettingComponent from './components/pages/settings'
 import BemorPage from './components/pages/bemor'
 import DoctorPage from './components/pages/doctor'
 import BulimPage from './components/pages/Bulim'
+import IndeksPage from './components/pages/Indeks'
+import LabaratoryPages from './components/pages/labaratory'
+import GlyukozaPage from './components/pages/Indeks'
+import GlyukozaPages from './components/pages/glyukoza'
+import BioximikPages from './components/pages/bioximik'
+import AnalizPages from './components/pages/analiz'
 
 
 
@@ -27,8 +33,13 @@ const App = () => {
             <Route element={<LayoutComponent />}>
               <Route element={<PrivateRoute />}>
                 <Route path='/' element={<Home />} />
-                <Route path='/watchlist' element={<WatchListComponent />} />
+                <Route path='/indeks' element={<IndeksPage />} />
+                {/* <Route path='/watchlist' element={<WatchListComponent />} /> */}
                 <Route path='/bulim' element={<BulimPage />} />
+                <Route path='/labaratory' element={<LabaratoryPages />} />
+                <Route path='/glyukoza' element={<GlyukozaPages />} />
+                <Route path='/bioximik' element={<BioximikPages />} />
+                <Route path='/analiz' element={<AnalizPages />} />
                 <Route path='/doctor' element={<DoctorPage />} />
                 <Route path='/bemor' element={<BemorPage />} />
                 <Route path='/settings' element={<SettingComponent />} />

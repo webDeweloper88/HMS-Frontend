@@ -72,14 +72,9 @@ const SidebarComponent: FC<ISidebarProps> = (props: ISidebarProps): JSX.Element 
 										variant='h1'
 										className={classes.brandTitle}
 									>
-										Demo
+										HMS
 									</Typography>
 								</Box>
-								{/*{isNonmobile && (
-									<IconButton onClick={() => setIsOpen(!isOpen)}>
-										<ChevronLeftOutlined />
-									</IconButton>
-								)}*/}
 							</FlexBetween>
 						</Box>
 						<List
